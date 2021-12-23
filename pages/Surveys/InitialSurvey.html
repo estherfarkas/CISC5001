@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Initial Survey</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Initial Survey</h1>
+            <hr>
+        <form>
+            <div class = "form-group m-3">
+                <label for="first_name" class = "form-label"> First Name:</label>
+                <input type= "text" class="form-control" id = "first_name">
+                </div>
+
+                <div class = "form-group m-3">
+                <label for="last_name" class = "form-label"> Last Name:</label>
+                <input type= "text" class="form-control" id = "last_name">
+            </div>
+
+            <div class = "form-group m-3">
+                <label for = "email" class = "form-label"> Email Address</label>
+                <input type = "email" class = "form-control" id = "email" placeholder = "example@example.com">
+                </div>
+
+
+                <div class = "form-group m-3">
+
+                <label for = "age" class = "form-label"> Age</label>
+                <select class = "form-select form-select-lg m-3" aria-label = "18-25" name = "age">
+                    <option selected> Select Age</option>
+                    <option value = "18-25"> 18-25</option>
+                    <option value = "26-35"> 26-35</option>
+                    <option value = "36-45"> 36-45</option>
+                    <option value = "45+"> 45+</option>
+                </select>
+                <br>
+                </div>
+
+                <div class = "form-group m-3">
+                <label for = "race" class = "form-label"> Race</label>
+                <select class = "form-select form-select-lg m-3" aria-label = "American-Indian/Alaska Native" name = "race">
+                    <option selected> Select Race</option>
+                    <option value = "American-Indian/Alaska Native"> American-Indian/Alaska Native</option>
+                    <option value = "Asian"> Asian</option>
+                    <option value = "Black or African-American"> Black or African American</option>
+                    <option value = "Hispanic or Latino"> Hispanic or Latino</option>
+                    <option value = "White"> White</option>
+                    <option value = "Two or more races"> Two or more races</option>
+                    <option value = "Prefer not to say"> Prefer not to say</option>
+                </select>
+                <br>
+                </div>
+
+                <div class = "form-group m-3">
+                <label for = "college" class = "form-label"> College</label>
+                <select class = "form-select form-select-lg m-3" aria-label = "Brooklyn College" name = college>
+                    <option selected> Select College</option>
+                    <option value = "Brooklyn College"> Brooklyn College</option>
+                    <option value = "NEIU"> NEIU</option>
+                </select>
+                <br>
+                </div>
+
+                <div class = "form-group m-3">
+                <label for = "course_taking" class = "form-label"> Have you taken the first programming course (CISC 1115 or
+                    CS 200 or equivalent)                     
+                </label>
+                <select class = "form-select form-select-lg m-3" aria-label = "I have not taken it" name = "first_programming_course">
+                    <option selected> Select Option </option>
+                    <option value = "I have not taken it"> I have not taken it</option>
+                    <option value = "I have taken and passed the course"> I have taken and passed the course</option>
+                    <option value = "I am currently taking it"> I am currently taking it</option>
+                    <option value = "I started taking it but withdrew or failed"> I started taking it but withdrew or failed</option>
+                </select>
+                <br>
+                </div>
+
+                <div class = "form-group m-3">
+                <label for = "english" class = "form-label"> What is your level of English proficiency?
+                </label>
+                <select class = "form-select form-select-lg m-3" aria-label = "High Fluency/Native Speaker" name = "English_proficiency">
+                    <option selected> Select Proficiency</option>
+                    <option value = "High fluency/Native Speaker"> High Fluency/Native Speaker</option>
+                    <option value = "Medium Fluency/Intermediate"> Medium Fluency/Intermediate</option>
+                    <option value = "Low Fluency/Beginner"> Low Fluency/Beginner</option>
+                </select>
+                <br>
+                </div>
+
+                <div class = "form-group m-3">
+                <label for = "device" class = "form-label"> Which device do you prefer for engaging with educational software in general
+                </label>
+                <select class = "form-select form-select-lg m-3" aria-label = "Computer" name = "device-preference">
+                    <option selected> Select Device</option>
+                    <option value = "Computer"> Computer</option>
+                    <option value = "Mobile"> Mobile</option>
+                </select>
+                <br>
+                </div>
+
+                <div class = "form-group m-3">
+                <label for="why" class = "form-label"> Why?</label>
+                <textarea class="form-control" id = "why" rows = "2"></textarea>
+                <br>
+                </div>
+
+                </div>
+
+            </form>
+            <div style = "text-align: center">
+            <button class="btn btn-primary text-center" onclick = "redirect()" id = submitBtn>Submit</button>
+            </div>
+        </div>
+        <script>
+            document.getElementById("submitBtn").addEventListener("click", redirect);
+
+            function redirect () {
+                window.localStorage.setItem("userID", "1002");
+                const userID = window.localStorage.getItem("userID");
+
+                const personType = userID % 4;
+                if (personType === 1 || personType === 3){
+                window.location.href = '../Reading/Reading.html';
+                }
+                else {
+                    window.location.href = '../../MobileDeviceSwitch.html';
+                }
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

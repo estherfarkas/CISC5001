@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Math</title>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Math</h1>
+            <hr>
+
+            <p>You will be given 4 short (multiple choice) math questions to
+                solve. <p>
+                Recall that when faced with multiple operations, math
+                expressions are evaluated in the following order: 
+                <p>
+                Parentheses<p> 
+                Exponents<p> 
+                Multiplication/Division <p> 
+                Addition/Subtraction
+                <p>
+                Example: 20 - 4 x (1 + 3) + 3<sup>2</sup> <p> 
+                Parentheses: (1 + 3) = 4 <p> 
+                Exponents: 3<sup>2</sup> = 9 
+                <p> 
+                Multiplication: 4 x 4 = 16 <p> 
+                Addition/Subtraction: 20 - 16 = 4 + 9 = 13
+            <p>
+            </p>
+            
+            <button
+                class="btn btn-dark"
+                onclick="redirect()"
+            >
+                Continue
+            </button>
+        </div>
+
+        <script>
+            function redirect () {
+                const personType = window.localStorage.getItem("userID") % 4
+                const device = window.localStorage.getItem("device")
+
+                if (
+                    (personType == 1 && device.includes("desktop")) ||
+                    (personType == 4 && device.includes("desktop")) ||
+                    (personType == 2 && device.includes("mobile")) ||
+                    (personType == 3 && device.includes("mobile"))
+                ) {
+                    window.location.href = './Math1Questions.html'
+                }
+                else {
+                    window.location.href = './Math2Questions.html'
+                }
+        }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
